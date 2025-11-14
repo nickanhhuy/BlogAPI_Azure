@@ -13,11 +13,11 @@ namespace BlogAPI.Core.Models
 
         [Required]
         public String? Content { get; set; }
-        [Required]
         public String? Author { get; set; } = "admin";
-        public DateTime CreatedDate { get; set; }
+        [Required]
+        public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
         
-        public DateTime? UpdatedDate { get; set; } = DateTime.UtcNow;
+        public DateTime? UpdatedDate { get; set; } 
         public ICollection<Comment>? Comments { get; set; }
     }
 }
