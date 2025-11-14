@@ -3,6 +3,7 @@ using BlogAPI.Core.Interfaces;
 using BlogAPI.Core.Models;
 using Microsoft.EntityFrameworkCore;
 using BlogAPI.Infrastructure.Data;
+
 public class CommentRepository : ICommentRepository
 {
     private readonly BlogDbContext _context;
@@ -50,4 +51,10 @@ public class CommentRepository : ICommentRepository
         await _context.SaveChangesAsync();
         return comment;
     }
+    public async Task<bool> ExistsCommentAsync(int id)
+    {
+        return await _context.Comments.AnyAsync(c => c.Id == id);
+    }
 }
+    
+

@@ -1,3 +1,7 @@
+using BlogAPI.Core.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using BlogAPI.Core.Models;
+using BlogAPI.Infrastructure.Data;
 namespace BlogAPI.Infrastructure.Repository
 {
     public class PostRepository : IPostRepository
@@ -34,6 +38,10 @@ namespace BlogAPI.Infrastructure.Repository
         {
             _context.Posts.Update(post);
             await _context.SaveChangesAsync();
+        }
+        public async Task<bool> ExistsPostAsync(int id)
+        {
+            return await _context.Posts.AnyAsync(p => p.Id == id);
         }   
     }
 }

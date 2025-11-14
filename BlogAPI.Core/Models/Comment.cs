@@ -1,8 +1,9 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using BlogAPI.Core.Models;
 
-namespace BlogAPI.Models
+namespace BlogAPI.Core.Models
 {
     public class Comment
     {
@@ -14,18 +15,17 @@ namespace BlogAPI.Models
 
         [Required]
         [StringLength(100)]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         [Required]
         [StringLength(150)]
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         [Required]
         [StringLength(1000)]
-        public string Content { get; set; }
+        public string? Content { get; set; }
 
         public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
-
-        public virtual Post Post { get; set; }
+        public virtual required Post Post { get; set; }
     }
 }

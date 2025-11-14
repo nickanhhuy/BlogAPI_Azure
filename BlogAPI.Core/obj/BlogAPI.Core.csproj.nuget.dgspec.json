@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Documents\\Document\\ASPProject\\BlogAPI\\BlogAPI\\BlogAPI.Core\\BlogAPI.Core.csproj": {}
+    "c:\\Documents\\Document\\ASPProject\\BlogAPI\\BlogAPI\\BlogAPI.Core\\BlogAPI.Core.csproj": {}
   },
   "projects": {
-    "C:\\Documents\\Document\\ASPProject\\BlogAPI\\BlogAPI\\BlogAPI.Core\\BlogAPI.Core.csproj": {
+    "c:\\Documents\\Document\\ASPProject\\BlogAPI\\BlogAPI\\BlogAPI.Core\\BlogAPI.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Documents\\Document\\ASPProject\\BlogAPI\\BlogAPI\\BlogAPI.Core\\BlogAPI.Core.csproj",
+        "projectUniqueName": "c:\\Documents\\Document\\ASPProject\\BlogAPI\\BlogAPI\\BlogAPI.Core\\BlogAPI.Core.csproj",
         "projectName": "BlogAPI.Core",
-        "projectPath": "C:\\Documents\\Document\\ASPProject\\BlogAPI\\BlogAPI\\BlogAPI.Core\\BlogAPI.Core.csproj",
+        "projectPath": "c:\\Documents\\Document\\ASPProject\\BlogAPI\\BlogAPI\\BlogAPI.Core\\BlogAPI.Core.csproj",
         "packagesPath": "C:\\Users\\Huy\\.nuget\\packages\\",
-        "outputPath": "C:\\Documents\\Document\\ASPProject\\BlogAPI\\BlogAPI\\BlogAPI.Core\\obj\\",
+        "outputPath": "c:\\Documents\\Document\\ASPProject\\BlogAPI\\BlogAPI\\BlogAPI.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

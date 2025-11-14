@@ -1,10 +1,10 @@
 using Microsoft.EntityFrameworkCore;
-using TaskManagement.Core.Models;
-namespace TaskManagement.Infrastructure.Data;
+using BlogAPI.Core.Models;
+namespace BlogAPI.Infrastructure.Data;
 
-public class ApplicationDbContext : DbContext
+public class BlogDbContext : DbContext
 {
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+    public BlogDbContext(DbContextOptions<BlogDbContext> options)
     : base(options)
     {
     }

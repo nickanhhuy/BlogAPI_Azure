@@ -1,11 +1,12 @@
 using System.ComponentModel.DataAnnotations;
+using BlogAPI.Core.Models;
 
 namespace BlogAPI.Core.Models
 {
     public class Post
     {
         [Key]
-        public int Id;
+        public int Id { get; set; }
 
         [Required]
         [MaxLength(200)]
