@@ -107,11 +107,14 @@ public class BlogController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeletePost(int id)
     {
-        var deleted = await _postRepository.DeletePostAsync(id);
-        if (!deleted)
+        // Ensure the post exists before attempting deletion
+        var post = await _postRepository.GetPostByIdAsync(id);
+        if (post == null)
         {
             return NotFound(new { message = $"Post with ID {id} not found" });
         }
+
+        await _postRepository.DeletePostAsync(id);
         return NoContent();
     }
 

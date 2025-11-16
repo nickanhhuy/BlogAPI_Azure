@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+bem6qvpI8k=",
+  "dgSpecHash": "i55s47rPm4A=",
   "success": true,
-  "projectFilePath": "c:\\Documents\\Document\\ASPProject\\BlogAPI\\BlogAPI\\BlogAPI.Infrastructure\\BlogAPI.Infrastructure.csproj",
+  "projectFilePath": "C:\\Documents\\Document\\ASPProject\\BlogAPI\\BlogAPI\\BlogAPI.Infrastructure\\BlogAPI.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Huy\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Huy\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
@@ -22,6 +22,7 @@
     "C:\\Users\\Huy\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\9.0.10\\microsoft.entityframeworkcore.relational.9.0.10.nupkg.sha512",
     "C:\\Users\\Huy\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite\\9.0.10\\microsoft.entityframeworkcore.sqlite.9.0.10.nupkg.sha512",
     "C:\\Users\\Huy\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite.core\\9.0.10\\microsoft.entityframeworkcore.sqlite.core.9.0.10.nupkg.sha512",
+    "C:\\Users\\Huy\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\9.0.10\\microsoft.entityframeworkcore.tools.9.0.10.nupkg.sha512",
     "C:\\Users\\Huy\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\9.0.10\\microsoft.extensions.caching.abstractions.9.0.10.nupkg.sha512",
     "C:\\Users\\Huy\\.nuget\\packages\\microsoft.extensions.caching.memory\\9.0.10\\microsoft.extensions.caching.memory.9.0.10.nupkg.sha512",
     "C:\\Users\\Huy\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\9.0.10\\microsoft.extensions.configuration.abstractions.9.0.10.nupkg.sha512",

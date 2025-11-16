@@ -11,6 +11,5 @@ namespace BlogAPI.Core.Interfaces
         Task UpdatePostAsync(Post post);
         Task DeletePostAsync(int id);
         Task<bool> ExistsPostAsync(int id);
-        Task<bool> ExistsAsync(int id);
     }
 }

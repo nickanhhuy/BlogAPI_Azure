@@ -1,0 +1,12 @@
+C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.Core\bin\Debug\net9.0\BlogAPI.Core.deps.json
+C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.Core\bin\Debug\net9.0\BlogAPI.Core.dll
+C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.Core\bin\Debug\net9.0\BlogAPI.Core.pdb
+C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.Core\obj\Debug\net9.0\BlogAPI.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.Core\obj\Debug\net9.0\BlogAPI.Core.AssemblyInfoInputs.cache
+C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.Core\obj\Debug\net9.0\BlogAPI.Core.AssemblyInfo.cs
+C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.Core\obj\Debug\net9.0\BlogAPI.Core.csproj.CoreCompileInputs.cache
+C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.Core\obj\Debug\net9.0\BlogAPI.Core.sourcelink.json
+C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.Core\obj\Debug\net9.0\BlogAPI.Core.dll
+C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.Core\obj\Debug\net9.0\refint\BlogAPI.Core.dll
+C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.Core\obj\Debug\net9.0\BlogAPI.Core.pdb
+C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.Core\obj\Debug\net9.0\ref\BlogAPI.Core.dll
