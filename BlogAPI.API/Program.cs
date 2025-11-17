@@ -1,5 +1,7 @@
 using BlogAPI.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using BlogAPI.Infrastructure.Repository;
+using BlogAPI.Core.Interfaces;
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -7,6 +9,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddControllers();
+
+//Register Repositories
+builder.Services.AddScoped<IPostRepository, PostRepository>();
+builder.Services.AddScoped<ICommentRepository, CommentRepository>();
+
+//Register DBContext
 builder.Services.AddDbContext<BlogDbContext>(options =>
 options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 var app = builder.Build();

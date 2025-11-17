@@ -38,7 +38,7 @@ public class BlogController : ControllerBase
         return Ok(post);
     }
     // POST: api/posts
-    [HttpPost]
+    [HttpPost("posts")]
     public async Task<ActionResult<Post>> CreatePost([FromBody] PostCreateDto postDto)
     {
         if (!ModelState.IsValid)
