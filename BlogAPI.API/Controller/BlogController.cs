@@ -20,14 +20,14 @@ public class BlogController : ControllerBase
     }
     //POST API CRUD Operations:
     // GET: api/posts
-    [HttpGet]
+    [HttpGet("posts")]
     public async Task<ActionResult<IEnumerable<Post>>> GetAllPosts()
     {
         var posts = await _postRepository.GetAllPostsAsync();
         return Ok(posts);
     }
     // GET: api/posts/{id}
-    [HttpGet("{id}")]
+    [HttpGet("posts/{id}")]
     public async Task<ActionResult<Post>> GetPost(int id)
     {
         var post = await _postRepository.GetPostByIdAsync(id);
@@ -60,8 +60,8 @@ public class BlogController : ControllerBase
             createdPost
         );
     }
-    // PUT: api/posts/{id}
-    [HttpPut("{id}")]
+    // PUT: api/post/{id}
+    [HttpPut("posts/{id}")]
     public async Task<IActionResult> UpdatePost(int id, [FromBody] PostUpdateDto postDto)
     {
         if (!ModelState.IsValid)
@@ -81,7 +81,7 @@ public class BlogController : ControllerBase
 
         return Ok(existingPost);
     }
-    // PATCH: api/tasks/{id}
+    // PATCH: api/posts/{id}
     [HttpPatch("{id}")]
     public async Task<IActionResult> PatchTask(int id, [FromBody] JsonPatchDocument<Post> patchDoc)
     {
@@ -103,8 +103,8 @@ public class BlogController : ControllerBase
         await _postRepository.UpdatePostAsync(post);
         return Ok(post);
     }
-    // DELETE: api/tasks/{id}
-    [HttpDelete("{id}")]
+    // DELETE: api/posts/{id}
+    [HttpDelete("posts/{id}")]
     public async Task<IActionResult> DeletePost(int id)
     {
         // Ensure the post exists before attempting deletion
