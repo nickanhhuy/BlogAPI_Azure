@@ -13,7 +13,7 @@ public class CommentRepository : ICommentRepository
         _context = context;
     }
 
-    public async Task<Comment> AddCommentAsync(Comment comment)
+    public async Task<Comment> CreateCommentAsync(Comment comment)
     {
         _context.Comments.Add(comment);
         await _context.SaveChangesAsync();
@@ -45,12 +45,21 @@ public class CommentRepository : ICommentRepository
             .ToListAsync();
     }
 
-    public async Task<Comment> UpdateCommentAsync(Comment comment)
+    public async Task<Comment?> UpdateCommentAsync(Comment comment)
     {
-        _context.Comments.Update(comment);
+        var existingComment = await _context.Comments.FindAsync(comment.Id);
+        if (existingComment == null)
+        {
+            return null;
+        }
+        existingComment.Name = comment.Name;
+        existingComment.Email = comment.Email;
+        existingComment.Content = comment.Content;
+        existingComment.CreatedDate = comment.CreatedDate;
         await _context.SaveChangesAsync();
-        return comment;
+        return existingComment;
     }
+
     public async Task<bool> ExistsCommentAsync(int id)
     {
         return await _context.Comments.AnyAsync(c => c.Id == id);

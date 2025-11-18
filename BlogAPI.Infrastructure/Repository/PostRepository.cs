@@ -25,20 +25,32 @@ namespace BlogAPI.Infrastructure.Repository
             await _context.SaveChangesAsync();
             return post;
         }
-        public async Task DeletePostAsync(int id)
+        public async Task<bool> DeletePostAsync(int id)
         {
             var post = await _context.Posts.FindAsync(id);
-            if (post != null)
+            if (post == null)
             {
-                _context.Posts.Remove(post);
-                await _context.SaveChangesAsync();
+                return false;
             }
-        }
-        public async Task UpdatePostAsync(Post post)
-        {
-            _context.Posts.Update(post);
+            _context.Posts.Remove(post);
             await _context.SaveChangesAsync();
+            return true;
         }
+        public async Task<Post?> UpdatePostAsync(Post post)
+        {
+            var existingPost = await _context.Posts.FindAsync(post.Id);
+            if (existingPost == null)
+            {
+                return null;
+            }
+            existingPost.Title = post.Title;
+            existingPost.Content = post.Content;
+            existingPost.Author = post.Author;
+            existingPost.UpdatedDate = DateTime.UtcNow;
+            await _context.SaveChangesAsync();
+            return existingPost;
+        }
+
         public async Task<bool> ExistsPostAsync(int id)
         {
             return await _context.Posts.AnyAsync(p => p.Id == id);

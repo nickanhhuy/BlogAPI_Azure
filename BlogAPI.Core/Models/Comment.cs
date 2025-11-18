@@ -26,6 +26,6 @@ namespace BlogAPI.Core.Models
         public string? Content { get; set; }
 
         public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
-        public virtual required Post Post { get; set; }
+        public virtual Post Post { get; set; }
     }
 }

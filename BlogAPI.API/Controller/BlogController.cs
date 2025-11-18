@@ -68,18 +68,22 @@ public class BlogController : ControllerBase
             return BadRequest(ModelState);
 
         // Fetch existing post
-        var existingPost = await _postRepository.GetPostByIdAsync(id);
-        if (existingPost == null)
+        var existingPost = await _postRepository.ExistsPostAsync(id);
+        if (!existingPost)
+        {
             return NotFound(new { message = $"Post with ID {id} not found" });
+        }
+        var post = new Post
+        {
+            Id = id,
+            Title = postDto.Title,
+            Content = postDto.Content,
+            Author = "admin",
+            UpdatedDate = DateTime.UtcNow
+        };
+        var updatedPost = await _postRepository.UpdatePostAsync(post);
 
-        // Update fields
-        existingPost.Title = postDto.Title;
-        existingPost.Content = postDto.Content;
-        existingPost.UpdatedDate = DateTime.UtcNow;
-
-        await _postRepository.UpdatePostAsync(existingPost);
-
-        return Ok(existingPost);
+        return Ok(updatedPost);
     }
     // PATCH: api/posts/{id}
     [HttpPatch("{id}")]
@@ -108,15 +112,113 @@ public class BlogController : ControllerBase
     public async Task<IActionResult> DeletePost(int id)
     {
         // Ensure the post exists before attempting deletion
-        var post = await _postRepository.GetPostByIdAsync(id);
-        if (post == null)
+        var deleted_post = await _postRepository.GetPostByIdAsync(id);
+        if (deleted_post == null)
         {
             return NotFound(new { message = $"Post with ID {id} not found" });
         }
-
-        await _postRepository.DeletePostAsync(id);
         return NoContent();
     }
 
+    // Comment CRUD operations API endpoints
+    //get a specific comment by id
+    [HttpGet("comments/{id}")]
+    public async Task<ActionResult<Comment>> GetCommentById(int id)
+    {
+        var comment = await _commentRepository.GetCommentByIdAsync(id);
+        if (comment == null)
+        {
+            return NotFound(new { message = $"Comment with ID {id} not found" });
+        }
+        return Ok(comment);
+    }
+    //get all comments for a post
+    [HttpGet("posts/{postId}/comments")]
+    public async Task<ActionResult<IEnumerable<Comment>>> GetCommentsByPostId(int postId)
+    {
+        var comments = await _commentRepository.GetCommentsByPostIdAsync(postId);
+        return Ok(comments);
+    }
+    //create a comment on a post
+    [HttpPost("posts/{postId}/comments")]
+    public async Task<ActionResult<Comment>> CreateComment(int postId, [FromBody] CommentCreateDto commentDto)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+        var comment = new Comment
+        {
+            PostId = postId,
+            Name = commentDto.Name,
+            Email = commentDto.Email,
+            Content = commentDto.Content,
+            CreatedDate = DateTime.UtcNow
+        };
+        var createdComment = await _commentRepository.CreateCommentAsync(comment);
+        return CreatedAtAction(
+            nameof(GetCommentById),
+            new { id = createdComment.Id },
+            createdComment
+        );
+    }
+    //update an entire comment
+    [HttpPut("comments/{id}")]
+    public async Task<IActionResult> UpdateComment(int id, [FromBody] CommentUpdateDto commentDto)
+    {
+        if (!ModelState.IsValid) {
 
+            return BadRequest(ModelState);
+        }
+
+        var existingComment = await _commentRepository.GetCommentByIdAsync(id);
+        if (existingComment == null) {
+             return NotFound(new { message = $"Comment with ID {id} not found" });
+        }
+        var comment = new Comment
+        {
+            Id = id,
+            PostId = existingComment.PostId,
+            Name = commentDto.Name,
+            Email = commentDto.Email,
+            Content = commentDto.Content
+        };
+        var updated_comment = await _commentRepository.UpdateCommentAsync(comment);
+        return Ok(updated_comment);
+    }
+
+    //delete a comment
+    [HttpDelete("comments/{id}")]
+    public async Task<IActionResult> DeleteComment(int id)
+    {
+        var deletedComment = await _commentRepository.GetCommentByIdAsync(id);
+        if (deletedComment == null)
+        {
+            return NotFound(new { message = $"Comment with ID {id} not found" });
+        }
+        await _commentRepository.DeleteCommentAsync(id);
+        return NoContent();
+    }
+
+    //update partially a comment
+    [HttpPatch("comments/{id}")]
+    public async Task<IActionResult> PatchComment(int id, [FromBody] JsonPatchDocument<Comment> patchDoc)
+    {
+        if (patchDoc == null)
+        {
+            return BadRequest(new { message = "Patch document is null" });
+        }
+        var comment = await _commentRepository.GetCommentByIdAsync(id);
+        if (comment == null)
+        {
+            return NotFound(new { message = $"Comment with ID {id} not found" });
+        }
+        patchDoc.ApplyTo(comment);
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+        await _commentRepository.UpdateCommentAsync(comment);
+        return Ok(comment);
+    }
 }
