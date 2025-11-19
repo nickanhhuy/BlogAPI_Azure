@@ -159,3 +159,9 @@ C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\bin\Debug\net9.0\Mi
 C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
 C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
 C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\bin\Debug\net9.0\System.Text.Json.dll
+C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\bin\Debug\net9.0\publish\web.config
+C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\bin\Debug\net9.0\publish\appsettings.Development.json
+C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\bin\Debug\net9.0\publish\appsettings.json
+C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\bin\Debug\net9.0\publish\BlogAPI.API.deps.json
+C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\bin\Debug\net9.0\publish\BlogAPI.API.runtimeconfig.json
+C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\bin\Debug\net9.0\publish\BlogAPI.API.staticwebassets.endpoints.json
