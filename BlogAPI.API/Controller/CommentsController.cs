@@ -9,18 +9,18 @@ namespace BlogAPI.API.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class CommentController : ControllerBase
+public class CommentsController : ControllerBase
 {
     private readonly IPostRepository _postRepository;
     private readonly ICommentRepository _commentRepository;
-    public CommentController(IPostRepository postRepository, ICommentRepository commentRepository)
+    public CommentsController(IPostRepository postRepository, ICommentRepository commentRepository)
     {
         _postRepository = postRepository;
         _commentRepository = commentRepository;
     }
     // Comment CRUD operations API endpoints
     //get a specific comment by id
-    [HttpGet("comments/{id}")]
+    [HttpGet("{id}")]
     public async Task<ActionResult<Comment>> GetCommentById(int id)
     {
         var comment = await _commentRepository.GetCommentByIdAsync(id);
@@ -31,7 +31,8 @@ public class CommentController : ControllerBase
         return Ok(comment);
     }
     //update an entire comment
-    [HttpPut("comments/{id}")]
+    // PUT: api/comments/{id}
+    [HttpPut("{id}")]
     public async Task<IActionResult> UpdateComment(int id, [FromBody] CommentUpdateDto commentDto)
     {
         if (!ModelState.IsValid) {
@@ -56,7 +57,8 @@ public class CommentController : ControllerBase
     }
 
     //delete a comment
-    [HttpDelete("comments/{id}")]
+    //delete: api/comments/{id}
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteComment(int id)
     {
         var deletedComment = await _commentRepository.GetCommentByIdAsync(id);
@@ -69,7 +71,8 @@ public class CommentController : ControllerBase
     }
 
     //update partially a comment
-    [HttpPatch("comments/{id}")]
+    //PATCH: api/comments/{id}
+    [HttpPatch("{id}")]
     public async Task<IActionResult> PatchComment(int id, [FromBody] JsonPatchDocument<Comment> patchDoc)
     {
         if (patchDoc == null)

@@ -8,25 +8,25 @@ using System.Threading.Tasks;
 namespace BlogAPI.API.Controllers;
 [Route("api/[controller]")]
 [ApiController]
-public class PostController : ControllerBase
+public class PostsController : ControllerBase
 {
     private readonly IPostRepository _postRepository;
     private readonly ICommentRepository _commentRepository;
-    public PostController(IPostRepository postRepository, ICommentRepository commentRepository)
+    public PostsController(IPostRepository postRepository, ICommentRepository commentRepository)
     {
         _postRepository = postRepository;
         _commentRepository = commentRepository;
     }
     //POST API CRUD Operations:
-    // GET: api/posts
-    [HttpGet("posts")]
+    // GET: api/posts => Retrieve all blog posts
+    [HttpGet]
     public async Task<ActionResult<IEnumerable<Post>>> GetAllPosts()
     {
         var posts = await _postRepository.GetAllPostsAsync();
         return Ok(posts);
     }
-    // GET: api/posts/{id}
-    [HttpGet("posts/{id}")]
+    // GET: api/posts/{id} => Retrieve a specific post by ID
+    [HttpGet("{id}")]
     public async Task<ActionResult<Post>> GetPost(int id)
     {
         var post = await _postRepository.GetPostByIdAsync(id);
@@ -36,8 +36,8 @@ public class PostController : ControllerBase
         }
         return Ok(post);
     }
-    // POST: api/posts
-    [HttpPost("posts")]
+    // POST: api/posts => create a new blog post
+    [HttpPost]
     public async Task<ActionResult<Post>> CreatePost([FromBody] PostCreateDto postDto)
     {
         if (!ModelState.IsValid)
@@ -59,8 +59,8 @@ public class PostController : ControllerBase
             createdPost
         );
     }
-    // PUT: api/post/{id}
-    [HttpPut("posts/{id}")]
+    // PUT: api/posts/{id} => update an entire post
+    [HttpPut("{id}")]
     public async Task<IActionResult> UpdatePost(int id, [FromBody] PostUpdateDto postDto)
     {
         if (!ModelState.IsValid)
@@ -84,7 +84,7 @@ public class PostController : ControllerBase
 
         return Ok(updatedPost);
     }
-    // PATCH: api/posts/{id}
+    // PATCH: api/posts/{id} => partially update a post
     [HttpPatch("{id}")]
     public async Task<IActionResult> PatchTask(int id, [FromBody] JsonPatchDocument<Post> patchDoc)
     {
@@ -106,8 +106,8 @@ public class PostController : ControllerBase
         await _postRepository.UpdatePostAsync(post);
         return Ok(post);
     }
-    // DELETE: api/posts/{id}
-    [HttpDelete("posts/{id}")]
+    // DELETE: api/posts/{id} => delete a post and its comments
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeletePost(int id)
     {
         // Ensure the post exists before attempting deletion
@@ -118,15 +118,18 @@ public class PostController : ControllerBase
         }
         return NoContent();
     }
+    //Comment API Operations:
+    //Endpoint: api/posts/{postId}/comments
     //get all comments for a post
-    [HttpGet("posts/{postId}/comments")]
+    [HttpGet("{postId}/comments")]
     public async Task<ActionResult<IEnumerable<Comment>>> GetCommentsByPostId(int postId)
     {
         var comments = await _commentRepository.GetCommentsByPostIdAsync(postId);
         return Ok(comments);
     }
+    //Endpoint: api/posts/{postId}/comments
     //create a comment on a post
-    [HttpPost("posts/{postId}/comments")]
+    [HttpPost("{postId}/comments")]
     public async Task<ActionResult<Comment>> CreateComment(int postId, [FromBody] CommentCreateDto commentDto)
     {
         if (!ModelState.IsValid)
@@ -148,7 +151,7 @@ public class PostController : ControllerBase
             createdComment
         );
     }
-
+    //implement a method to get comment by id.
     private object GetCommentById()
     {
         throw new NotImplementedException();
