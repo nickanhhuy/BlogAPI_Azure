@@ -116,9 +116,9 @@ public class PostsController : ControllerBase
         {
             return NotFound(new { message = $"Post with ID {id} not found" });
         }
+        await _postRepository.DeletePostAsync(id);
         return NoContent();
     }
-    //Comment API Operations:
     //Endpoint: api/posts/{postId}/comments
     //get all comments for a post
     [HttpGet("{postId}/comments")]
@@ -127,6 +127,8 @@ public class PostsController : ControllerBase
         var comments = await _commentRepository.GetCommentsByPostIdAsync(postId);
         return Ok(comments);
     }
+
+
     //Endpoint: api/posts/{postId}/comments
     //create a comment on a post
     [HttpPost("{postId}/comments")]
@@ -144,16 +146,8 @@ public class PostsController : ControllerBase
             Content = commentDto.Content,
             CreatedDate = DateTime.UtcNow
         };
-        var createdComment = await _commentRepository.CreateCommentAsync(comment);
-        return CreatedAtAction(
-            nameof(GetCommentById),
-            new { id = createdComment.Id },
-            createdComment
-        );
+        await _commentRepository.CreateCommentAsync(comment);
+        return Ok(comment);
     }
-    //implement a method to get comment by id.
-    private object GetCommentById()
-    {
-        throw new NotImplementedException();
-    }
+
 }

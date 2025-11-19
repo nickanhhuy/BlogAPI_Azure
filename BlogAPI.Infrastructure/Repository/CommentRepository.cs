@@ -13,6 +13,10 @@ public class CommentRepository : ICommentRepository
         _context = context;
     }
 
+    public async Task<IEnumerable<Comment>> GetAllCommentsAsync()
+    {
+        return await _context.Comments.ToListAsync();
+    }
     public async Task<Comment> CreateCommentAsync(Comment comment)
     {
         _context.Comments.Add(comment);

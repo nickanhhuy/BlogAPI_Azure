@@ -13,8 +13,11 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    
   </ItemGroup>
-
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="9.0.0" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BlogAPI.Core\BlogAPI.Core.csproj" />
     <ProjectReference Include="..\BlogAPI.Infrastructure\BlogAPI.Infrastructure.csproj" />

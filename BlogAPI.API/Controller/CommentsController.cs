@@ -18,7 +18,16 @@ public class CommentsController : ControllerBase
         _postRepository = postRepository;
         _commentRepository = commentRepository;
     }
-    // Comment CRUD operations API endpoints
+
+    [HttpGet]
+    //get all comments
+    public async  Task<ActionResult<IEnumerable<Comment>>> GetAllComments()
+    {
+        var comments = await _commentRepository.GetAllCommentsAsync();
+        return Ok(comments);
+    }
+
+
     //get a specific comment by id
     [HttpGet("{id}")]
     public async Task<ActionResult<Comment>> GetCommentById(int id)
@@ -30,6 +39,7 @@ public class CommentsController : ControllerBase
         }
         return Ok(comment);
     }
+
     //update an entire comment
     // PUT: api/comments/{id}
     [HttpPut("{id}")]

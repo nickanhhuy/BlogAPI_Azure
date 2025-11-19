@@ -165,3 +165,5 @@ C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\bin\Debug\net9.0\pu
 C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\bin\Debug\net9.0\publish\BlogAPI.API.deps.json
 C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\bin\Debug\net9.0\publish\BlogAPI.API.runtimeconfig.json
 C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\bin\Debug\net9.0\publish\BlogAPI.API.staticwebassets.endpoints.json
+C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\bin\Debug\net9.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\bin\Debug\net9.0\Newtonsoft.Json.Bson.dll

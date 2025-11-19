@@ -3133,11 +3133,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Documents\\Document\\ASPProject\\BlogAPI\\BlogAPI\\BlogAPI.Infrastructure\\BlogAPI.Infrastructure.csproj",
+      "projectUniqueName": "c:\\Documents\\Document\\ASPProject\\BlogAPI\\BlogAPI\\BlogAPI.Infrastructure\\BlogAPI.Infrastructure.csproj",
       "projectName": "BlogAPI.Infrastructure",
-      "projectPath": "C:\\Documents\\Document\\ASPProject\\BlogAPI\\BlogAPI\\BlogAPI.Infrastructure\\BlogAPI.Infrastructure.csproj",
+      "projectPath": "c:\\Documents\\Document\\ASPProject\\BlogAPI\\BlogAPI\\BlogAPI.Infrastructure\\BlogAPI.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\Huy\\.nuget\\packages\\",
-      "outputPath": "C:\\Documents\\Document\\ASPProject\\BlogAPI\\BlogAPI\\BlogAPI.Infrastructure\\obj\\",
+      "outputPath": "c:\\Documents\\Document\\ASPProject\\BlogAPI\\BlogAPI\\BlogAPI.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
