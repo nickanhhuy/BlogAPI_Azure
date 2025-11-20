@@ -1,0 +1,386 @@
+{
+	"info": {
+		"_postman_id": "46630275-9bdf09f7-82f2-45d9-8913-2298a0e9c6c9",
+		"name": "BlogAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Retrieve all blog posts",
+			"id": "46630275-a1b24249-4b89-4dd3-a88d-5656b724cb6e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "Retrieve all blog posts\n",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"VietNam Destination\",\r\n    \"content\":\"Ho Chi Minh city and Hanoi are the most famous and wonderful city\",\r\n    \"author\":\"Admin\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/posts",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve a specific post by ID",
+			"id": "46630275-ed4cfa91-5a2a-482c-8243-f3fd06904a7b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/posts/{id}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a post",
+			"id": "46630275-eceb936f-6315-4be9-978f-85955766da8b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "Create a new blog post\n",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"AWS\",\r\n    \"content\":\"sceinienqq\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/posts",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update an entire post",
+			"id": "46630275-e812ef06-6fd7-441d-8c3b-703fd57e4c05",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "Update an entire post",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"VietNam Destination 2 (new2)\",\r\n    \"content\":\"Da Nang city is the most second famous and wonderful cities. AGAIGNAIGN\",\r\n    \"author\":\"Admin\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/posts/2",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Partially update a post",
+			"id": "46630275-1f8d98b0-2fa3-4261-9b02-2e693937703d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json-patch+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  { \"op\": \"replace\", \r\n    \"path\": \"/title\", \r\n    \"value\": \"Please give me a job\" \r\n  }\r\n]\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/posts/2",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a post",
+			"id": "46630275-a1c3ce7f-5bd8-464e-adfa-17e4b4ce900c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "Delete a post and its comment",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"VietNam Destination 2\",\r\n    \"content\":\"Da Nang city is the most second famous and wonderful city\",\r\n    \"author\":\"Admin\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/posts/4",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve all comments",
+			"id": "46630275-507a98d8-b50d-4171-a851-053e74f4e4a3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve a specific comment by ID",
+			"id": "46630275-5e624864-8b48-4ced-9ded-0c7e403418ab",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/comments/{id}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"comments",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve all comments for a post",
+			"id": "46630275-6e800a0b-e6e0-4032-bf9f-6e0b41511f76",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/posts/{postId}/comments",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"{postId}",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a comment for a post",
+			"id": "46630275-a9c20e42-2a5d-4d32-bb55-0ce28eab7d37",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Tin\",\r\n    \"email\":\"tin@gmail.com\",\r\n    \"content\":\"Good Title and content\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/posts/1/comments",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"1",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a comment",
+			"id": "46630275-4cee5c0b-cdf7-4d09-94fa-7adeacee7136",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/blog/comments/1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"blog",
+						"comments",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Partially update a comment",
+			"id": "46630275-b6d25cc7-8889-43cb-9bd5-4d4cc3d7176b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/comments/{id}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"comments",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
