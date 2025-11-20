@@ -5,6 +5,7 @@ C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\publish\BlogAPI.API
 C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\publish\BlogAPI.API.runtimeconfig.json
 C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\publish\BlogAPI.API.pdb
 C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\publish\Microsoft.AspNetCore.JsonPatch.dll
+C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\publish\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\publish\Microsoft.AspNetCore.OpenApi.dll
 C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\publish\Microsoft.Data.Sqlite.dll
 C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\publish\Microsoft.EntityFrameworkCore.dll
@@ -23,6 +24,7 @@ C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\publish\Microsoft.E
 C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\publish\Microsoft.Extensions.Primitives.dll
 C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\publish\Microsoft.OpenApi.dll
 C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\publish\Newtonsoft.Json.dll
+C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\publish\Newtonsoft.Json.Bson.dll
 C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\publish\SQLitePCLRaw.batteries_v2.dll
 C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\publish\SQLitePCLRaw.core.dll
 C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\publish\SQLitePCLRaw.provider.e_sqlite3.dll

@@ -13,13 +13,11 @@ namespace BlogAPI.Infrastructure.Repository
         }
         public async Task<IEnumerable<Post>> GetAllPostsAsync()
         {
-            return await _context.Posts.Include(p => p.Comments).ToListAsync();
+            return await _context.Posts.ToListAsync();
         }
         public async Task<Post?> GetPostByIdAsync(int id)
         {
-            return await _context.Posts.
-                Include(p => p.Comments)
-                .FirstOrDefaultAsync(p => p.Id == id);
+            return await _context.Posts.FindAsync(id);
         }
         public async Task<Post> CreatePostAsync(Post post)
         {

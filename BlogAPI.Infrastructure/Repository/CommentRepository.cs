@@ -45,8 +45,9 @@ public class CommentRepository : ICommentRepository
     public async Task<IEnumerable<Comment>> GetCommentsByPostIdAsync(int postId)
     {
         return await _context.Comments
-            .Where(c => c.PostId == postId)
-            .ToListAsync();
+                         .Where(c => c.PostId == postId)
+                         .ToListAsync();
+
     }
 
     public async Task<Comment?> UpdateCommentAsync(Comment comment)

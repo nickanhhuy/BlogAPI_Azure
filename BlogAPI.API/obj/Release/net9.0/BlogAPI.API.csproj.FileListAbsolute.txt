@@ -159,3 +159,5 @@ C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\obj\Release\net9.0\
 C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\obj\Release\net9.0\BlogAPI.API.pdb
 C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\obj\Release\net9.0\BlogAPI.API.genruntimeconfig.cache
 C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\obj\Release\net9.0\ref\BlogAPI.API.dll
+C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\bin\Release\net9.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Documents\Document\ASPProject\BlogAPI\BlogAPI\BlogAPI.API\bin\Release\net9.0\Newtonsoft.Json.Bson.dll
