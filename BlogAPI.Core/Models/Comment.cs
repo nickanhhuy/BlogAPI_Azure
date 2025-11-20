@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using BlogAPI.Core.Models;
 
 namespace BlogAPI.Core.Models
@@ -26,6 +27,6 @@ namespace BlogAPI.Core.Models
         public string? Content { get; set; }
 
         public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
-        public virtual Post Post { get; set; }
+        public Post? Post { get; set; }
     }
 }
