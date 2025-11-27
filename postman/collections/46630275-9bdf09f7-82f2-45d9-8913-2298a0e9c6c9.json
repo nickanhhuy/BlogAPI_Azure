@@ -79,7 +79,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\":\"AWS\",\r\n    \"content\":\"sceinienqq\"\r\n}",
+					"raw": "{\r\n    \"title\":\"AWS CLOUD\",\r\n    \"content\":\"sceinienqqAAAA\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -213,7 +213,26 @@
 			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/comments",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"comments"
+					]
+				}
 			},
 			"response": []
 		},
@@ -358,17 +377,17 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": ""
+					"raw": "[\r\n  { \"op\": \"replace\", \r\n    \"path\": \"/name\", \r\n    \"value\": \"David\" \r\n  }\r\n]"
 				},
 				"url": {
-					"raw": "{{baseURL}}/api/comments/{id}",
+					"raw": "{{baseURL}}/api/comments/6",
 					"host": [
 						"{{baseURL}}"
 					],
 					"path": [
 						"api",
 						"comments",
-						"{id}"
+						"6"
 					]
 				}
 			},
