@@ -117,7 +117,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\":\"VietNam Destination 2 (new2)\",\r\n    \"content\":\"Da Nang city is the most second famous and wonderful cities. AGAIGNAIGN\",\r\n    \"author\":\"Admin\"\r\n}"
+					"raw": "{\r\n    \"title\":\"VietNam Destination 2 (new2)\",\r\n    \"content\":\"Da Nang city is the most second famous and wonderful cities.AGAIGNAIGN HAHAHAHAHA HOHOOHOHasadasdas\",\r\n    \"author\":\"Admin\"\r\n}"
 				},
 				"url": {
 					"raw": "{{baseURL}}/api/posts/2",
@@ -144,7 +144,7 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json-patch+json",
+						"value": "application/json",
 						"type": "text"
 					}
 				],
@@ -189,17 +189,17 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\":\"VietNam Destination 2\",\r\n    \"content\":\"Da Nang city is the most second famous and wonderful city\",\r\n    \"author\":\"Admin\"\r\n}"
+					"raw": ""
 				},
 				"url": {
-					"raw": "{{baseURL}}/api/posts/4",
+					"raw": "{{baseURL}}/api/posts/5",
 					"host": [
 						"{{baseURL}}"
 					],
 					"path": [
 						"api",
 						"posts",
-						"4"
+						"5"
 					]
 				}
 			},
@@ -242,14 +242,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseURL}}/api/comments/{id}",
+					"raw": "{{baseURL}}/api/comments/2",
 					"host": [
 						"{{baseURL}}"
 					],
 					"path": [
 						"api",
 						"comments",
-						"{id}"
+						"2"
 					]
 				}
 			},
