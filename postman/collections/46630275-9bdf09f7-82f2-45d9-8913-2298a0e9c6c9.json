@@ -48,14 +48,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseURL}}/api/posts/{id}",
+					"raw": "{{baseURL}}/api/posts/3",
 					"host": [
 						"{{baseURL}}"
 					],
 					"path": [
 						"api",
 						"posts",
-						"{id}"
+						"3"
 					]
 				}
 			},
@@ -265,14 +265,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseURL}}/api/posts/{postId}/comments",
+					"raw": "{{baseURL}}/api/posts/1/comments",
 					"host": [
 						"{{baseURL}}"
 					],
 					"path": [
 						"api",
 						"posts",
-						"{postId}",
+						"1",
 						"comments"
 					]
 				}
@@ -328,15 +328,14 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{baseURL}}/api/blog/comments/1",
+					"raw": "{{baseURL}}/api/comments/7",
 					"host": [
 						"{{baseURL}}"
 					],
 					"path": [
 						"api",
-						"blog",
 						"comments",
-						"1"
+						"7"
 					]
 				}
 			},
